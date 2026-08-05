@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Teacher Bot</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .note {
+            margin-top: 20px;
+            color: #555;
+            font-style: italic;
+        }
+
+        #output {
+            background: #222;
+            color: #00ff88;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            white-space: pre-line;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📚 JavaScript Teacher Bot</h1>
+
+    <p>This mini project demonstrates JavaScript strings, template literals, string length, character indexing, and <code>indexOf()</code>.</p>
+
+    <div id="output"></div>
+
+    <p class="note">
+        Open Developer Tools (F12) → Console to view the console output as well.
+    </p>
+</div>
+
+<script>
+console.log("Hi there!");
+
+const output = document.getElementById("output");
+
+function print(message) {
+    console.log(message);
+    output.innerHTML += message + "\n";
+}
+
+const botName = "teacherBot";
+
+const greeting = `My name is ${botName}.`;
+print("Hi there!");
+print(greeting);
+
+const subject = "JavaScript";
+const topic = "strings";
+
+const sentence = `Today, you will learn about ${topic} in ${subject}.`;
+print(sentence);
+
+const strLengthIntro = `Here is an example of using the length property on the word ${subject}.`;
+print(strLengthIntro);
+
+print(subject.length);
+
+print(`Here is an example of using the length property on the word ${topic}.`);
+print(topic.length);
+
+print(`Here is an example of accessing the first letter in the word ${subject}.`);
+print(subject[0]);
+
+print(`Here is an example of accessing the second letter in the word ${subject}.`);
+print(subject[1]);
+
+print(`Here is an example of accessing the last letter in the word ${subject}.`);
+
+const lastCharacter = subject[subject.length - 1];
+print(lastCharacter);
+
+const learningIsFunSentence = "Learning is fun.";
+
+print("Here are examples of finding the positions of substrings in the sentence.");
+
+print(learningIsFunSentence.indexOf("Learning"));
+print(learningIsFunSentence.indexOf("fun"));
+print(learningIsFunSentence.indexOf("learning"));
+
+print("I hope you enjoyed learning today.");
+</script>
+
+</body>
+</html>
