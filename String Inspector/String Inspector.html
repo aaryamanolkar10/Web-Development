@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Inspector</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111827;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 700px;
+            background: #1f2937;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #60a5fa;
+        }
+
+        pre {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔍 String Inspector</h1>
+    <pre id="output"></pre>
+</div>
+
+<script>
+const output = document.getElementById("output");
+
+const print = text => output.textContent += text + "\n";
+
+const sentence = "freeCodeCamp is a great place to learn web development.";
+const message = "Welcome to freeCodeCamp!";
+
+print("=== includes() Examples ===");
+
+[
+    {
+        search: "freeCodeCamp",
+        reason: "the word exists in the sentence"
+    },
+    {
+        search: "JavaScript",
+        reason: "the word does not exist"
+    },
+    {
+        search: "freecodecamp",
+        reason: "includes() is case-sensitive"
+    }
+].forEach(item => {
+    print(
+        `sentence.includes("${item.search}") ➜ ${
+            sentence.includes(item.search)
+        } (${item.reason})`
+    );
+});
+
+print("\n=== slice() Examples ===");
+
+[
+    {
+        text: `Word: "${message.slice(11,23)}"`,
+    },
+    {
+        text: `Greeting: "${message.slice(0,7)}"`
+    },
+    {
+        text: `Last Character: "${message.slice(-1)}"`
+    }
+].forEach(item => print(item.text));
+
+print("\n✅ Workshop Complete!");
+</script>
+
+</body>
+</html>
